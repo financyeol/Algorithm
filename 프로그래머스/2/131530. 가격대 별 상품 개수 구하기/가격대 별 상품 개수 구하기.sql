@@ -1,0 +1,10 @@
+#만원 단위 가격대 별 출력
+#컬럼명 지정
+#구간 지정 (최소금액)
+#가격대 별로 그룹화
+#가격대 기준 오름차순
+SELECT FLOOR(PRICE / 10000) * 10000 AS PRICE_GROUP,
+COUNT(PRODUCT_ID) AS PRODUCTS
+FROM PRODUCT 
+GROUP BY PRICE_GROUP
+ORDER BY 1;
